@@ -6,10 +6,10 @@ namespace TestProject1
     public class UnitTest1
     {
         [Theory]
-        [InlineData(100.0, 6, 3, 20)]  // 20% alennus
-        [InlineData(200.0, 6, 1, 10)] // 10% alennus
-        [InlineData(50.0, 3, 6, 15)]   // 15% alennus
-        [InlineData(150.0, 4, 4, 0)] // Ei alennusta
+        [InlineData(100.0, 6, 3, 80.0)]  // 20% alennus
+        [InlineData(200.0, 6, 1, 180.0)] // 10% alennus
+        [InlineData(50.0, 3, 6, 42.5)]   // 15% alennus
+        [InlineData(150.0, 4, 4, 150.0)] // Ei alennusta
         public void CalculateDiscount_ReturnsExpectedResult(double price, int itemCount, int itemAge, double expected)
         {
 
