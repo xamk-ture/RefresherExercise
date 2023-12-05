@@ -36,5 +36,39 @@ namespace TestProject1
             // Assert
             Assert.Equal(expectedProfit, profit);
         }
+
+          [Theory]
+  [InlineData("III", 3)]
+  [InlineData("IV", 4)]
+  [InlineData("XIV", 14)]
+  [InlineData("IX", 9)]
+  [InlineData("LVIII", 58)]
+  [InlineData("MCMXCIV", 1994)]
+  public void ConvertToArabic_ValidRomanNumerals_ReturnsCorrectArabicNumber(string roman, int expected)
+  {
+      int result = Assigments.RomanToInt(roman);
+      Assert.Equal(expected, result);
+  }
+
+  [Theory]
+  [InlineData(1, "I")]
+  [InlineData(3, "III")]
+  [InlineData(4, "IV")]
+  [InlineData(9, "IX")]
+  [InlineData(58, "LVIII")]
+  [InlineData(1994, "MCMXCIV")]
+  public void ConvertToRoman_ValidNumbers_ReturnsCorrectRomanNumeral(int number, string expected)
+  {
+      string result = Assigments.IntToRoman(number);
+      Assert.Equal(expected, result);
+  }
+
+  [Theory]
+  [InlineData(0)]
+  [InlineData(4000)]
+  public void ConvertToRoman_InvalidNumbers_ThrowsArgumentException(int number)
+  {
+      Assert.Throws<ArgumentOutOfRangeException>(() => Assigments.IntToRoman(number));
+  }
     }
 }
