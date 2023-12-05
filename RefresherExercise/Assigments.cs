@@ -61,5 +61,15 @@ namespace RefresherExercise
 
             return 0;
         }
+
+        public static string IntToRoman(int num)
+        {
+            return "";
+        }
+
+        public static int RomanToInt(string romanNumeral)
+        {
+            return 0;
+        }
     }
 }
